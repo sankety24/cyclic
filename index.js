@@ -9,6 +9,8 @@ const { authentication } = require("./middleaware/authentication")
 const { todoRouter } = require("./route/todo.route")
 require("dotenv").config()
 const app=express()
+
+
 app.use(express.json())
 
 app.use(cors({
