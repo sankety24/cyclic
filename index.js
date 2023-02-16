@@ -16,7 +16,9 @@ app.use(express.json())
 app.use(cors({
     origin:"*"
 }))
-
+app.get("/",(req,res)=>{
+    res.send("hello")
+})
 app.post("/signup",async(req,res)=>{
     const {email,password}=req.body;
     const userPresent=await UserModel.findOne({email})
