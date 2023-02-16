@@ -35,7 +35,9 @@ else{
     }
 }
 })
-
+app.get("/",(req,res)=>{
+    res.send("hello")
+})
 
 app.post("/login",async(req,res)=>{
    var {email,password}=req.body
