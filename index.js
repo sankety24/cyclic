@@ -69,7 +69,7 @@ app.post("/login",async(req,res)=>{
 
 
 app.use(authentication)
-app.use("/todo",todoRouter)
+app.use("/todos",todoRouter)
 
 app.listen(process.env.PORT,async()=>{
     try{

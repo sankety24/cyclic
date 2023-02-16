@@ -9,7 +9,7 @@ const TodoSchema=mongoose.Schema({
     userId:String
 })
 
-const TodoModel=mongoose.model("todo",TodoSchema)
+const TodoModel=mongoose.model("todos",TodoSchema)
 
 
 module.exports={TodoModel}
