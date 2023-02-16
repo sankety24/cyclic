@@ -20,7 +20,7 @@ app.get("/",(req,res)=>{
     res.send("hello")
 })
 app.post("/signup",async(req,res)=>{
-    const {email,password,name}=req.body;
+    const {email,password}=req.body;
     const userPresent=await UserModel.findOne({email})
     if(userPresent?.email){
         res.send({"msg":"already exist"})
@@ -28,7 +28,7 @@ app.post("/signup",async(req,res)=>{
 else{
     try{
         bcrypt.hash(password,3,async function(err,hash){
-            const user=new UserModel({email,password:hash,name})
+            const user=new UserModel({email,password:hash})
             await user.save()
             res.send({"msg":"sign up successfull"})
         })
